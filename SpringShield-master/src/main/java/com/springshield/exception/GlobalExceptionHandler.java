@@ -101,6 +101,7 @@ public class GlobalExceptionHandler {
         error.put("validationErrors", errors);
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
+    //fallback hndler that means it handles all things not handled upar me
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, Object>> handleGlobalException(Exception ex) {
         Map<String, Object> error = new HashMap<>();
